@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body class="font-spaceMono bg-LightGrayishCyan">
+    <main class="flex flex-col items-center justify-center">
+      <header class="p-20">
+        <h1
+          class="tracking-[10px] break-words w-[100px] text-xl text-DarkGrayishCyan"
+        >
+          SPLITTER
+        </h1>
+      </header>
+      <div
+        class="w-[1100px] bg-white rounded-2xl flex items-center justify-between px-10 mb-10"
+      >
+        <div class="basis-6/12 p-12">
+          <div class="pb-12">
+            <label for="bill" class="block text-DarkGrayishCyan text-md mb-2"
+              >Bill</label
+            >
+            <label
+              class="relative before:absolute before:left-6 before:top-0 before:bottom-0 before:w-10 before:mr-2 before:bg-[url('/images/icon-dollar.svg')] before:bg-no-repeat"
+            ></label>
+            <input
+              id="bill"
+              type="number"
+              class="bg-gray-100 text-lg py-3 px-5 w-full text-end rounded-lg border-2 border-solid border-gray-100 focus:border-StrongCyan focus:border-2 focus:border-solid focus:shadow-sm focus:shadow-VeryDarkCyan focus:outline-none caret-StrongCyan"
+              required
+            />
+          </div>
+
+          <div class="pb-12">
+            <p class="text-DarkGrayishCyan text-md mb-4">Select Tip %</p>
+            <div class="grid grid-cols-3 gap-5 auto-rows-fr auto-cols-fr">
+              <button
+                id="5%Button"
+                class="w-[130px] h-[55px] rounded-lg bg-VeryDarkCyan text-white text-xl hover:bg-[#67e1cb] hover:text-VeryDarkCyan active:scale-110 duration-300"
+              >
+                5%
+              </button>
+              <button
+                type="submit"
+                id="10%Button"
+                class="w-[130px] h-[55px] rounded-lg bg-VeryDarkCyan text-white text-xl hover:bg-[#67e1cb] hover:text-VeryDarkCyan active:scale-110 duration-300"
+              >
+                10%
+              </button>
+              <button
+                type="submit"
+                id="15%Button"
+                class="w-[130px] h-[55px] rounded-lg bg-VeryDarkCyan text-white text-xl hover:bg-[#67e1cb] hover:text-VeryDarkCyan active:scale-110 duration-300"
+              >
+                15%
+              </button>
+              <button
+                type="submit"
+                id="20%Button"
+                class="w-[130px] h-[55px] rounded-lg bg-VeryDarkCyan text-white text-xl hover:bg-[#67e1cb] hover:text-VeryDarkCyan active:scale-110 duration-300"
+              >
+                20%
+              </button>
+              <button
+                type="submit"
+                id="50%Button"
+                class="w-[130px] h-[55px] rounded-lg bg-VeryDarkCyan text-white text-xl hover:bg-[#67e1cb] hover:text-VeryDarkCyan active:scale-110 duration-300"
+              >
+                50%
+              </button>
+
+              <input
+                id="custom"
+                type="number"
+                class="bg-gray-100 rounded-lg text-xl text-end p-2 placeholder-DarkGrayishCyan placeholder:text-center"
+                placeholder="Custom"
+              />
+            </div>
+          </div>
+
+          <div class="">
+            <div class="flex items-start justify-between">
+              <p class="text-DarkGrayishCyan text-md mb-2">Number of People</p>
+              <p id="errorText" class="text-red-500 text-end hidden">
+                Can't be zero
+              </p>
+            </div>
+            <label
+              class="relative before:absolute before:left-6 before:top-0 before:bottom-0 before:w-10 before:bg-[url('/images/icon-person.svg')] before:bg-no-repeat"
+            ></label>
+            <input
+              id="numOfPeople"
+              type="number"
+              class="bg-gray-100 text-lg py-3 px-5 w-full text-end rounded-lg border-2 border-solid border-gray-100 focus:border-StrongCyan focus:border-2 focus:border-solid focus:shadow-sm focus:shadow-VeryDarkCyan focus:outline-none caret-StrongCyan"
+            />
+          </div>
+        </div>
+
+        <div
+          class="basis-6/12 bg-VeryDarkCyan rounded-xl p-10 flex flex-col items-center"
+        >
+          <div class="w-full">
+            <div class="flex items-start justify-between pb-10">
+              <div>
+                <span class="text-white block">Tip Amount</span>
+                <span class="text-GrayishCyan text-sm block">/ person</span>
+              </div>
+              <span id="tipsAmount" class="text-4xl text-StrongCyan"
+                >$0.00</span
+              >
+            </div>
+            <div class="flex items-start justify-between pb-40">
+              <div>
+                <span class="text-white block">Total</span>
+                <span class="text-GrayishCyan text-sm block">/ person</span>
+              </div>
+              <span id="total" class="text-4xl text-StrongCyan">$0.00</span>
+            </div>
+          </div>
+          <button
+            id="reset"
+            class="bg-StrongCyan w-[400px] h-[45px] hover:bg-[#67e1cb] text-VeryDarkCyan text-xl rounded-lg block active:scale-110 duration-300"
+          >
+            RESET
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
