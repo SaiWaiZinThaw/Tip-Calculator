@@ -26,6 +26,7 @@ function Error() {
     "caret-StrongCyan",
     "focus:border-StrongCyan"
   );
+
   PeopleInput.classList.add(
     "border-red-500",
     "focus:border-red-500",
