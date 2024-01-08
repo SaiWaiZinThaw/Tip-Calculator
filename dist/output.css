@@ -671,6 +671,11 @@ video {
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
 }
 
+.border-red-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
 .bg-LightGrayishCyan{
   --tw-bg-opacity: 1;
   background-color: hsl(185 41% 84% / var(--tw-bg-opacity));
@@ -720,11 +725,6 @@ video {
 .py-3{
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-}
-
-.py-12{
-  padding-top: 3rem;
-  padding-bottom: 3rem;
 }
 
 .pb-10{
@@ -925,6 +925,10 @@ video {
 @media (min-width: 1024px){
   .lg\:w-\[1100px\]{
     width: 1100px;
+  }
+
+  .lg\:w-auto{
+    width: auto;
   }
 
   .lg\:basis-6\/12{
